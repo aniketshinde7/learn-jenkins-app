@@ -3,8 +3,18 @@ pipeline {
 
     stages {
         stage('Hello') {
+            agent {
+                docker{
+                    image 'node:18-apline'
+                    reuseNode true
+                }
+            }
             steps {
-                echo 'Hello World'
+                sh '''
+                ls -la
+                node --version 
+                npm --version
+                '''
             }
         }
     }

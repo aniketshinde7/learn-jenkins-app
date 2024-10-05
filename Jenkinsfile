@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Hello') {
             agent {
-                docker{
+                docker {
                     image 'node:18-apline'
                     reuseNode true
                 }
